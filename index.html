@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Hot Diggity Dogs</title>
+  <script src="https://bridge.playgama.com/v2/stable/playgama-bridge.js"></script>
+  <link rel="preload" href="fonts/LilitaOne.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    /* Lilita One (SIL OFL 1.1, fonts/OFL-LilitaOne.txt) */
+    @font-face { font-family: 'Lilita One'; src: url(fonts/LilitaOne.woff2) format('woff2'); font-display: swap; }
+  </style>
+  <script type="module" crossorigin src="./assets/index-oWW9cRdN.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-B16kEjkj.css">
+</head>
+<body>
+  <div id="stage">
+    <canvas id="street"></canvas>
+    <canvas id="top"></canvas>
+
+    <!-- shift HUD: progress, coins, pause, mute. Nothing else. -->
+    <div id="hud" class="hidden">
+      <div id="topbar">
+        <div class="pill prog" id="prog"></div>
+        <div class="pill money" id="hud-money"><div class="ico" id="coinIco"></div><b id="moneyN">$0</b></div>
+        <div class="sidebtns">
+          <button class="round" id="pauseBtn" aria-label="Pause"></button>
+          <button class="round" id="muteBtn" aria-label="Mute"></button>
+        </div>
+      </div>
+      <div id="combo"></div>
+      <div id="toast" class="hidden"></div>
+    </div>
+
+    <!-- hub: the van in the park -->
+    <div id="hub" class="hidden">
+      <div class="hubtop">
+        <div class="pill money"><div class="ico" id="hubCoin"></div><b id="hubMoney">$0</b></div>
+        <div class="pill streak" id="hubStreak"></div>
+      </div>
+      <div class="hubbottom">
+        <div class="hubbtns">
+          <button class="round big" id="shopBtn" aria-label="Van shop"><span>🛒</span><em>Shop</em></button>
+          <button class="round big" id="bookBtn" aria-label="Recipe book"><span>📖</span><em>Recipes</em></button>
+          <button class="round big" id="goalsBtn" aria-label="Daily goals"><span>🎯</span><em>Goals</em><i class="dot hidden" id="goalsDot"></i></button>
+          <button class="round big" id="regBtn" aria-label="Regulars"><span>👥</span><em>Regulars</em><i class="dot hidden" id="regDot"></i></button>
+        </div>
+        <button class="btn yellow big pulse" id="startBtn">Start shift</button>
+        <div id="startSub"></div>
+      </div>
+    </div>
+
+    <div id="panel" class="screen hidden">
+      <div class="card"><button class="x" id="panelX" aria-label="Close">✕</button>
+        <h1 id="panelTitle"></h1><div id="panelSub"></div><div id="panelBody"></div></div>
+    </div>
+
+    <div id="results" class="screen hidden">
+      <div class="card">
+        <h1 id="rsTitle">Shift done!</h1>
+        <div id="rsStars"></div>
+        <div id="rsBody"></div>
+        <div id="rsFoot">
+          <button class="btn mint hidden" id="adBtn"></button>
+          <button class="btn red" id="hubBtn">Van</button>
+          <button class="btn yellow big" id="nextBtn">Next shift</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal" class="screen hidden"><div class="card small"><button class="x" id="modalX" aria-label="Close">✕</button><div id="modalBody"></div></div></div>
+
+    <div id="title">
+      <img id="titleLogo" alt="Hot Diggity Dogs" src="art/logo.webp">
+      <div class="lb"><i id="loadBar"></i></div>
+      <button class="btn yellow big hidden" id="playBtn">Play</button>
+    </div>
+  </div>
+</body>
+</html>
